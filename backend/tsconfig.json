@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "target": "ES2020",
@@ -7,11 +8,9 @@
     "allowJs": true,
     "strict": true,
     "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "outDir": "./dist"
+    "resolveJsonModule": true
   },
   "ts-node": {
     "esm": true
-  },
-  "include": ["src"]
+  }
 }
