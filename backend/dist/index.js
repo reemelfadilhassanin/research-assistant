@@ -15,6 +15,7 @@ dotenv.config();
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(cors({ origin: "*", credentials: true }));
 const upload = multer({ dest: 'uploads/' });
 app.post('/upload-pdf', upload.single('file'), async (req, res) => {
     try {
