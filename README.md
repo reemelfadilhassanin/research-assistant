@@ -1,20 +1,33 @@
-# 🤖 Research Assistant - RAG Q&A Bot
+# Lumae RAG Research Assistant
 
-A full-stack Retrieval-Augmented Generation (RAG) assistant:
+A lightweight Retrieval-Augmented Generation (RAG) research assistant built with:
 
-- Upload PDF, TXT, or specify a URL.
-- Parses & splits content into meaningful chunks.
-- Generates embeddings using Cohere (embed-english-v2.0).
-- Stores vectors in Supabase (pgvector).
-- On user query:
-  - Retrieves the top-matching content using Supabase RPC.
-  - Passes context to LLaMA3 via Groq API for final answer.
+* **LangChain**
+* **Pinecone** for vector database & similarity search
+* **Hugging Face** for embeddings
+* **Together AI** for powerful LLM completions
 
-## 🔥 Tech Stack
+It helps you upload documents (PDFs), embed them into a vector store, and ask questions that are answered with relevant context from your data.
 
-- Node.js / Express backend
-- LangChain for chains & document loaders
-- Supabase (vector store)
-- Cohere (embeddings)
-- Groq (LLM with LLaMA3-70b)
-- React frontend (Upload & Ask components)
+> 🚀 **Live demo:**
+>
+> 👉 [https://lumae.onrender.com/](https://lumae.onrender.com/)
+
+---
+
+## Features
+
+* Upload PDF research papers or notes
+* Automatically splits and stores them in Pinecone
+
+*  Asks your questions and gets concise answers with sources from your data
+*  Uses Hugging Face for sentence embeddings + Together AI’s LLaMA 3 for answering
+
+* Different RAG strategies: basic similarity search, advanced LangChain chains
+* Designed to be easily extendable (supports memory, more loaders, conversational agents)
+
+## License
+
+MIT License.
+
+Feel free to fork, extend, or contribute!
