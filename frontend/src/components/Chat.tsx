@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+const BASE_URL = "https://research-assistant-vxo0.onrender.com";
 
 export function Chat() {
     const [question, setQuestion] = useState("");
@@ -14,7 +15,7 @@ export function Chat() {
         setMessages(prev => [...prev, userMessage]);
         
         try {
-            const res = await axios.post<{ answer: string }>("http://localhost:3001/ask", { question });
+            const res = await axios.post<{ answer: string }>(`${BASE_URL}/ask`, { question });
             setMessages(prev => [...prev, { from: "bot", text: res.data.answer }]);
         } catch {
             setMessages(prev => [...prev, { from: "bot", text: "⚠️ Failed to get answer. Please try again." }]);

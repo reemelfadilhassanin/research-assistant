@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+const BASE_URL = "https://research-assistant-vxo0.onrender.com";
 
 export function Upload() {
     const [file, setFile] = useState<File>();
@@ -13,7 +14,7 @@ export function Upload() {
             const formData = new FormData();
             formData.append("file", file);
 
-            await axios.post("http://localhost:3001/upload-pdf", formData);
+            await axios.post(`${BASE_URL}/upload-pdf`, formData);
             alert("✅ PDF uploaded and processed!");
         } catch (error) {
             alert("❌ Upload failed. Please try again.");
